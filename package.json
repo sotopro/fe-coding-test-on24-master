@@ -5,16 +5,34 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "json-server ./src/index.js --routes routes.json --port 4000"
+    "dev": "webpack-dev-server --mode=development --open --hot",
+    "start": "npm run dev && json-server ./src/utils/mock/index.js --routes routes.json --port 4000",
+    "build": "webpack --mode=production"
   },
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
     "express": "^4.17.1",
-    "json-server": "^0.16.3"
+    "fs-extra": "^10.1.0",
+    "json-server": "^0.16.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
     "faker": "^5.5.3",
-    "lodash": "^4.17.21"
+    "html-webpack-plugin": "^5.5.0",
+    "lodash": "^4.17.21",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "bin": {
+    "fe-coding-test-on24": "./bin/start.js"
   }
 }
