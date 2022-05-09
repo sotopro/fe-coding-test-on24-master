@@ -34,7 +34,7 @@ const Event = () => {
     <div style={styles.content}>
       {event && (
         <>
-          <h2>{event.name}</h2>
+          <h2>{`${event.name} (${event.id})`}</h2>
           <p>
             <b>Start Date:</b> {getDate(event.dateTime)}
           </p>
